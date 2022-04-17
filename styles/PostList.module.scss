@@ -1,0 +1,27 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.blogHero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 33%;
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100vw;
+    height: 67%;
+    overflow-x: hidden;
+}

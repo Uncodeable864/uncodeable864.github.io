@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import { Edit2, Smartphone, Youtube } from "lucide-react";
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
@@ -13,7 +14,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Uncodeable864</h1>
-        <p className={styles.subtitle}>A collection of stuff I've done</p>
+        <p className={styles.subtitle}>A collection of stuff I&#39;ve done</p>
         <div className={styles.callToAction}>
           <a href="/posts">
             <button>

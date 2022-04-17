@@ -1,22 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=JetBrains+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap'); // @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 html,
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
     color: #eee;
     background-color: #111;
 }
 
-h1,
+.mono {
+    font-family: monospace;
+}
+
 h2,
 h3,
-.mono {
-    font-family: 'JetBrains Mono', monospace;
+h4,
+h5,
+h6 {
+    font-weight: 700;
 }
 
 code {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: monospace;
     background: #1a1a1a;
     border-radius: 0px;
     padding: 0.5rem;
@@ -48,6 +54,19 @@ button {
     }
     p {
         margin: 0 0 0 0.5rem;
+    }
+}
+
+button.arrow-right {
+    justify-content: start;
+    &::after {
+        transition: 100ms ease-in-out;
+        content: '→';
+        margin-left: 1rem;
+    }
+    &:hover::after {
+        content: '→';
+        margin-left: 2rem;
     }
 }
 
