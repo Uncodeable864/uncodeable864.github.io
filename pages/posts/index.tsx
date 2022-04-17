@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import Head from "next/head";
 import styles from "../../styles/PostList.module.scss";
 import db, { PostWithStringDate } from "../../lib/db";
@@ -32,7 +32,7 @@ export default function PostsPage({ feed }: { feed: PostWithStringDate[] }) {
 }
 
 // Get static props from getStaticProps
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const feedBad: Post[] = await db.post.findMany({
     where: {
       published: true,
@@ -47,5 +47,5 @@ export const getStaticProps: GetStaticProps = async () => {
     }),
   }));
 
-  return { props: { feed }, revalidate: 86400 };
+  return { props: { feed } };
 };

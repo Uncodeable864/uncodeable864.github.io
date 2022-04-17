@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import Head from "next/head";
 import styles from "../../styles/PostList.module.scss";
 import db, { AppWithStringDate, PostWithStringDate } from "../../lib/db";
@@ -28,7 +28,7 @@ export default function PostsPage({ apps }: { apps: AppWithStringDate[] }) {
 }
 
 // Get static props from getStaticProps
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const feedBad: App[] = await db.app.findMany({
     where: {
       published: true,
@@ -43,5 +43,5 @@ export const getStaticProps: GetStaticProps = async () => {
     }),
   }));
 
-  return { props: { apps }, revalidate: 86400 };
+  return { props: { apps } };
 };
